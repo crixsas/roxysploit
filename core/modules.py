@@ -25,6 +25,7 @@ def exploits():
     print " Smartremote       2.0.0        Take over a smart tv's remote control"
     print " Blueborne         1.0.0        Android Bluetooth memory leak all devices even cars"
     print " Byepot            1.0.0        Bypass Paid Hotspots using an old trick"
+    print " Esteemaudit       2.0.0        Esteemaudit is an RDP exploit and backdoor for Windows Server 2003 SP1,SP2, Windows XP SP1, SP2-SP3"
     print "\n"
 
 def others():
@@ -86,4 +87,5 @@ def all():
     print " Smbtouch          2.3.3        check if the target is vulnerable to samba exploits"
     print " Architouch        1.0.0        check if the target is x64 or x86"
     print " Byepot            1.0.0        Bypass Paid Hotspots using an old trick"
+    print " Esteemaudit       2.0.0        Esteemaudit is an RDP exploit and backdoor for Windows Server 2003 SP1,SP2, Windows XP SP1, SP2-SP3"
     print "\n"
