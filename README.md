@@ -1,4 +1,4 @@
-#Upcoming updates:
+# Upcoming updates:
 <pre>XML Config files more responsive and more powerful
 Better Plugin support
 </pre>
