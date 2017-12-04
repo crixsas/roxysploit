@@ -1,4 +1,7 @@
-
+#Upcoming updates:
+<pre>XML Config files more responsive and more powerful
+Better Plugin support
+</pre>
 ## It is frequently updated
 
 |Tested on|.
@@ -11,7 +14,7 @@
 |MacOSX|Needs porting
 |Windows| Ha no.
 
-## This is a release of the roxysploit pro version you can always support me at <a href="https://twitter.com/0x09f">@0x09f</a> or btc:  coming soon!
+## This is a release of the roxysploit you can always support me at <a href="https://twitter.com/0x09f">@0x09f</a> or btc:  coming soon!
 ## How to install
 <pre>$ git clone https://github.com/Eitenne/roxysploit.git; cd roxysploit; sudo /bin/bash install</pre>
 
