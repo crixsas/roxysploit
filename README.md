@@ -1,5 +1,7 @@
 # Last updated on: 12-05-2017
 ## It is frequently updated
+#Fixed issues
+rsfupdate is now working again
 
 |Tested on|.
 |---|---
