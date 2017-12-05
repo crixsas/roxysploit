@@ -1,3 +1,0 @@
-wine: Unhandled page fault on read access to 0x7f5919fac2f0 at address 0x7f592130cb07 (thread 0032), starting debugger...
-err:seh:start_debugger Couldn't start debugger ("winedbg --auto 31 212") (1115)
-Read the Wine Developers Guide on how to set up winedbg or another debugger
