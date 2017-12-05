@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#I dont care if this looks nice or not its a shell script to install neccery stuff
 echo "Thanks for downloading roxysploit!"
 echo "So im going to load all files now for you please wait..."
 mv rsfc /usr/bin/rsfc
