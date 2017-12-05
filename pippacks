@@ -23,3 +23,4 @@ pip install rlcompleter
 pip install readline
 pip install terminaltables
 pip install platform
+pip install lxml
