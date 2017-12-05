@@ -1,7 +1,4 @@
-# Upcoming updates:
-<pre>XML Config files more responsive and more powerful
-Better Plugin support
-</pre>
+# Last updated on: 12-05-2017
 ## It is frequently updated
 
 |Tested on|.
