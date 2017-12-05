@@ -24,7 +24,7 @@
 ## + <a href="https://www.youtube.com/channel/UCvydKPHB5fzqrJpS6BUqdRQ"> Youtube</a>
 ## + <a href="https://twitter.com/0x09f"> Twitter</a>
 
-<img src="carbon.jpg">
+<img src="carbon.png">
 
 ## Video Tutorials
 [Hacking using Tresspass | RoxySploit / Roxy Exploitation Framework]: https://www.youtube.com/watch?v=47UMnkeM-hk
