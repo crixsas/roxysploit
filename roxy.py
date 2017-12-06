@@ -95,7 +95,7 @@ else:
 
 os.system('clear')
 time.sleep(0.1)
-print "\033[1;94m[?]\033[1;m Starting Roxy Exploitation Framework..."
+print "\033[1;92m --[ \033[1;m Starting Roxy Exploitation Framework \033[1;92m ]--\033[1;m"
 time.sleep(20)
 RescoursesDir = os.getcwd()
 
