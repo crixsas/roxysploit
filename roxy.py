@@ -151,7 +151,8 @@ print """
 ::\033[1;33mRoxy Exploitation Framework\033[1;97m
 ::Codename : https://github.com/Eitenne
 """
-
+PLUGIN_END = ".plugin"
+PLUGIN_EXEC = "python plugins/"
 def main():
     try:
         line_1 = "\033[1;4m" + intname + "\033[1;24m > "
@@ -160,7 +161,7 @@ def main():
         time.sleep(0.5)
         if terminal[0:3] =='use':
             if terminal[4:] == terminal[4:]:
-                os.system('python plugins/%s.plugin' % (terminal[4:]))
+                os.system(PLUGIN_EXEC + terminal[4:] + PLUGIN_END)
                 main()
             #elif terminal[4:32] =='example':
                 #example()
