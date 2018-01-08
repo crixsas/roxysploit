@@ -26,6 +26,7 @@ def exploits():
     print " Blueborne         1.0.0        Android Bluetooth memory leak all devices even cars"
     print " Byepot            1.0.0        Bypass Paid Hotspots using an old trick"
     print " Esteemaudit       2.0.0        Esteemaudit is an RDP exploit and backdoor for Windows Server 2003 SP1,SP2, Windows XP SP1, SP2-SP3"
+    print " ExplodingCan      3.1.1        IIS 6.0 exploit that creates a remote backdoor"
     print "\n"
 
 def others():
@@ -88,4 +89,5 @@ def all():
     print " Architouch        1.0.0        check if the target is x64 or x86"
     print " Byepot            1.0.0        Bypass Paid Hotspots using an old trick"
     print " Esteemaudit       2.0.0        Esteemaudit is an RDP exploit and backdoor for Windows Server 2003 SP1,SP2, Windows XP SP1, SP2-SP3"
+    print " ExplodingCan      3.1.1        IIS 6.0 exploit that creates a remote backdoor"
     print "\n"
