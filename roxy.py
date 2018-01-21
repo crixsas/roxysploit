@@ -29,7 +29,7 @@ if not os.geteuid() == 0:
     sys.exit("""\033[1;91m\n[\033[1;m!\033[1;91m]\033[1;m RoxySploit Requires root access!!\n\033[1;m""")
 
 
-version = "4.8.9"
+version = "4.8.2"
 intname = "rsf"
 lan_ip = os.popen("ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'").read()
 public_ip = os.popen("wget http://ipinfo.io/ip -qO -").read()
@@ -147,10 +147,17 @@ time.sleep(0.3)
 print "\033[1;92m[+]\033[1;m Detected Version => %s" % (version)
 time.sleep(1)
 header.main_header()
+mac_address = check_output("/sbin/ifconfig wlan0 | awk '/ether/{print $2}'", shell=True)
+
+lan_ip = check_output("/sbin/ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'", shell=True)
+
+gateway_ip = check_output("/sbin/ip route | awk '/default/ { printf $3 }'", shell=True)
+
 print """
-::\033[1;33mRoxy Exploitation Framework\033[1;97m
-::Codename : https://github.com/Eitenne
-"""
+		> Local IP Address: %s                > Gateway IP: %s
+		> MAC Address: %s
+		""" % (str(lan_ip), str(gateway_ip), str(mac_address))
+
 PLUGIN_END = ".plugin"
 PLUGIN_EXEC = "python plugins/"
 def main():
@@ -233,9 +240,9 @@ Plugin Category
 def postit():
 	header.main_header()
 	print """
-::\033[1;33mRoxy Exploitation Framework\033[1;97m
-::Codename : https://github.com/Eitenne
-	"""
+		> Local IP Address: %s                > Gateway IP: %s
+		> MAC Address: %s
+		""" % (str(lan_ip), str(gateway_ip), str(mac_address))
 
 def start():
     menu.main_info()
