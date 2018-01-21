@@ -179,19 +179,7 @@ def main():
         elif terminal[0:21] == "retarget":
              retarget.edit()
              main()
-        elif terminal[0:13] == 'show payloads':
-            modules.payloads()
-            main()
-        elif terminal[0:14] == 'show exploits':
-            modules.exploits()
-            main()
-        elif terminal[0:94] == 'show utilities':
-            modules.utilities()
-            main()
-        elif terminal[0:15] == 'show others':
-            modules.others()
-            main()
-        elif terminal[0:17] == 'show all':
+        elif terminal[0:17] == 'show plugins':
             modules.all()
             main()
         elif terminal[0:4] =='help':
@@ -239,11 +227,7 @@ Plugin Category
 
  Name
  ----
- Payloads
- Exploits
- Utilities
- Others
- All
+ Plugins
 """
 
 def postit():
