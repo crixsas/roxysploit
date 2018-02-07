@@ -29,7 +29,7 @@ if not os.geteuid() == 0:
     sys.exit("""\033[1;91m\n[\033[1;m!\033[1;91m]\033[1;m RoxySploit Requires root access!!\n\033[1;m""")
 
 
-version = "4.8.2"
+version = "4.8.5"
 intname = "rsf"
 lan_ip = os.popen("ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'").read()
 public_ip = os.popen("wget http://ipinfo.io/ip -qO -").read()
@@ -42,7 +42,13 @@ for item in test:
         plugins_all = item.split('.')[0]
 
 options_sl = ['retarget','!','clean','others','gen','all','plugin','?','clear','exit','banner','help', 'show','ipnet','exploits','payloads','utilities']
-addrs = glob.glob("plugins/*.plugin")
+
+#addrs = glob.glob("plugins/*.plugin")
+
+directory_list = glob.glob('plugins/*.plugin')
+for line in directory_list:
+    addrs = line.split('plugins/')[1].split('.plugin')[0]
+	
 total_plugins = len(addrs)
 tabcomp = options_sl
 tabcomp +=addrs
