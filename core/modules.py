@@ -13,3 +13,5 @@ def all():
     directory_list = glob.glob('plugins/*.plugin')
     for line in directory_list:
         print " " + line.split('plugins/')[1].split('.plugin')[0]
+        
+    print ""
