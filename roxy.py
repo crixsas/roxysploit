@@ -43,12 +43,7 @@ for item in test:
 
 options_sl = ['retarget','!','clean','others','gen','all','plugin','?','clear','exit','banner','help', 'show','ipnet','exploits','payloads','utilities']
 
-#addrs = glob.glob("plugins/*.plugin")
-
-directory_list = glob.glob('plugins/*.plugin')
-for line in directory_list:
-    addrs = line.split('plugins/')[1].split('.plugin')[0]
-	
+addrs = glob.glob("plugins/*.plugin")
 total_plugins = len(addrs)
 tabcomp = options_sl
 tabcomp +=addrs
