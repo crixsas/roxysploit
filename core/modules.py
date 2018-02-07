@@ -1,11 +1,15 @@
 #!/usr/bin/env python
 
+import glob
+import sys
+import os
+
 def all():
-    xla = open("storage/plugins.loaded", "r")
-    con = xla.read()
     print ""
     print "Plugin Category: All"
     print "====================\n"
-    print "Name"
-    print "----"
-    print "%s" % (con)
+    print " Name"
+    print " ----"
+    directory_list = glob.glob('plugins/*.plugin')
+    for line in directory_list:
+        print " " + line.split('plugins/')[1].split('.plugin')[0]
