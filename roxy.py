@@ -97,8 +97,11 @@ else:
 
 os.system('clear')
 time.sleep(0.1)
-print "\033[1;92m --[ \033[1;m Starting Roxy Exploitation Framework \033[1;92m ]--\033[1;m"
-time.sleep(20)
+for i in range(101):
+        time.sleep(0.03)
+        stdout.write("\r[\033[92m*\033[0m] Preparing environment... %d" % (i))
+        stdout.flush()
+time.sleep(10)
 RescoursesDir = os.getcwd()
 
 dandtime = time.strftime("%d-%m-%Y-%H:%M:%S")
