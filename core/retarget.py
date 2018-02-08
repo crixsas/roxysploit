@@ -35,8 +35,4 @@ def edit():
     time.sleep(2)
     print "\033[1;94m[?]\033[1;m ReInitializing Global State"
     time.sleep(1)
-    print ""
-    print "Name             Set Value"
-    print "----             ----------"
-    print "TargetIp         %s" % (default_target)
     print "\033[1;92m[+]\033[1;m Configure successful"
