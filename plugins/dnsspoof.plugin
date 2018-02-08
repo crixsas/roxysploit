@@ -70,7 +70,7 @@ def main():
     print "\n"
     et = raw_input("\033[1;94m[?]\033[1;m Execute Plugins? [" + default10 + "]: ")  or default10
     if et == 'yes':
-        os.system('python dnsspoof.py -i ' + interface + ' -r ' + dns + '')
+        os.system('python plugins/dnsspoof.py -i ' + interface + ' -r ' + dns + '')
     elif et == 'no':
         print "Goodbye ;("
         sys.exit()
