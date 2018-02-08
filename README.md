@@ -1,5 +1,5 @@
 # Last updated on: 8 Feb 2018
-## It is frequently updated
+# Specials: Added chromecast exploit(released)
 
 |Tested on|.
 |---|---
