@@ -79,11 +79,8 @@ def dash():
 def aner():
     yen = "yes"
     et = "yes"
-    shellez = "132.168.2.5"
+    target = ip
     words = "here.txt"
-    print "\033[1;94m[?]\033[1;m Target :: Enter your target you want to attack"
-    target = raw_input('\033[1;92m[+]\033[1;m target: [' + shellez + ']: ') or shellez
-
     print "\033[1;94m[?]\033[1;m Wordlist :: Enter your wordlist"
     wordlist = raw_input('\033[1;92m[+]\033[1;m wordlist: [' + words + ']: ') or words
 
