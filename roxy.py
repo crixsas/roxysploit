@@ -41,12 +41,12 @@ for item in test:
     if item.endswith(".plugin"):
         plugins_all = item.split('.')[0]
 
-options_sl = ['retarget','!','clean','others','gen','all','plugin','?','clear','exit','banner','help', 'show','ipnet','exploits','payloads','utilities']
+options_sl = ['use','retarget','!','clean','others','gen','all','plugins','?','clear','exit','banner','help', 'show','ipnet','exploits','payloads','utilities']
 
 addrs = glob.glob("plugins/*.plugin")
 total_plugins = len(addrs)
 tabcomp = options_sl
-tabcomp +=addrs
+#tabcomp +=addrs
 
 def completer(text, state):
     options = [x for x in tabcomp if x.startswith(text)]
