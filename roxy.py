@@ -102,13 +102,13 @@ for i in range(101):
         time.sleep(0.03)
         stdout.write("\r[\033[92m*\033[0m] Preparing environment... %d" % (i))
         stdout.flush()
-time.sleep(10)
 RescoursesDir = os.getcwd()
 
 dandtime = time.strftime("%d-%m-%Y-%H:%M:%S")
 
 logfile = "%s/storage/logs/%s.log" % (RescoursesDir,dandtime)
 
+print ""
 if CHECK_LOGS == True:
     filename_logging = os.path.join(os.path.dirname(__file__), logfile)
     logging.basicConfig(filename=filename_logging, filemode='w', level=logging.DEBUG)
@@ -126,6 +126,7 @@ if CHECK_XML == False:
 else:
     var = "1"
 
+time.sleep(10)
 print "\033[1;94m[*]\033[1;m Retargetting Session"
 time.sleep(1)
 tree = etree.parse("storage/logs/config.xml")
