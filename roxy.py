@@ -5,6 +5,7 @@ import os, sys, time
 import readline, rlcompleter
 import os.path
 from time import sleep
+from sys import stdout, exit
 from core import menu
 from core import modules
 from core import help
