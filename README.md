@@ -8,6 +8,7 @@
 |Ubuntu|Working
 |Debian|Working
 |Centos|Not Tested
+|Android| Yup :).
 |MacOSX|Needs porting
 |Windows| Ha no.
 
