@@ -21,7 +21,7 @@
   remember that attacking targets without prior consent is illegal and punished by law.
 
 ## Social:
-## + <a href="https://discord.gg/8EP2sjv"> Discord</a>
+## + <a href="https://discord.gg/7qXa3dg"> Discord</a>
 ## + <a href="https://www.youtube.com/channel/UCvydKPHB5fzqrJpS6BUqdRQ"> Youtube</a>
 ## + <a href="https://twitter.com/0x09f"> Twitter</a>
 
