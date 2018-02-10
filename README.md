@@ -135,6 +135,4 @@ Ftpbrute Brute-force attack an ftp(file transfer protocol) server Wifijammer you
 ## Credits
 0x5a
 Aaronius
-Witt
-TDHU
-Team(InsaneLand) @2017
+Team(InsaneLand) @2018
