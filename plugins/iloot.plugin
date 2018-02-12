@@ -90,7 +90,6 @@ def aner():
     print ""
     print "Name             Set Value"
     print "----             ----------"
-    print "TargetIp         %s" % (ip)
     print "Email            %s" % (email)
     print "Password         %s" % (password)
     print "Plugin           %s" % (fin)
