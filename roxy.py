@@ -211,7 +211,7 @@ def main():
             os.system('wine cmd.exe /c ipconfig')
             main()
         elif terminal[0:8] =='clean':
-            os.system("echo 'Cleaning evidence ;)'; rm storage/logs/*")
+            os.system("echo 'Cleaning evidence ;)'; rm -rf storage/logs/*")
             main()
         elif terminal[0:5] =='clear':
             os.system('clear')
