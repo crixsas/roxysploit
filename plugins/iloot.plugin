@@ -96,7 +96,7 @@ def aner():
     print "\n"
     et = raw_input("\033[1;94m[?]\033[1;m Execute Plugins? [" + yen + "]: ")  or yen
     if et == 'yes':
-        os.system('python plugins/iloot/iloot.py %s %s --output storage/logs/backup' % (email,password))
+        os.system('cd plugins/iloot/ && python iloot.py %s %s --output ../../storage/logs/backup' % (email,password))
     elif et == 'no':
         print "Goodbye ;("
         sys.exit()
