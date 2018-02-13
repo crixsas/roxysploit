@@ -1,6 +1,5 @@
 # Last updated on: 13 Feb 2018
-# Specials: Added chromecast exploit(released)
-
+# Added ios forensic ( Recovery && Manifest bruteforce )
 |Tested on|.
 |---|---
 |Arch Linux|Working
