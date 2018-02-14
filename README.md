@@ -1,5 +1,5 @@
-# Last updated on: 13 Feb 2018
-# Added ios forensic ( Recovery && Manifest bruteforce )
+# Last updated on: 14 Feb 2018
+# Added Shellgame.plugin
 |Tested on|.
 |---|---
 |Arch Linux|Working
