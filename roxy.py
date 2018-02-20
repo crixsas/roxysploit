@@ -169,7 +169,7 @@ PLUGIN_EXEC = "python plugins/"
 def main():
     try:
         line_1 = "\033[1;4m" + intname + "\033[1;24m > "
-        terminal = raw_input(line_1).lower()
+        terminal = raw_input(line_1)
         logging.info(terminal)
         time.sleep(0.5)
         if terminal[0:3] =='use':
