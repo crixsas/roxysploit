@@ -82,7 +82,7 @@ def aner():
     print ""
     print "Name             Set Value"
     print "----             ----------"
-    print "Lport           %s" % (lport)
+    print "Lport            %s" % (lport)
     print "Plugin           %s" % (fin)
     print "\n"
     et = raw_input("\033[1;94m[?]\033[1;m Execute Plugins? [" + yen + "]: ")  or yen
