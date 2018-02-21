@@ -110,7 +110,7 @@ def main():
        print "\033[1;92m[*]\033[1;m Starting cloudflare resolver\033[1;m"
        time.sleep(2)
        print "\033[1;92m[*]\033[1;m Starting website reconnaissance\033[1;m"
-       os.system('sh plugins/Utilities/extractor.sh ' + url + '')
+       os.system('bash plugins/Utilities/extractor.sh ' + url + '')
     elif et == 'no':
         print "Goodbye ;("
         sys.exit()
