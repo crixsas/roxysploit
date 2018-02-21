@@ -1,5 +1,5 @@
 # Last updated on: 21 Feb 2018
-# Added Shellgame.plugin
+# Added better plugin support
 |Tested on|.
 |---|---
 |Arch Linux|Working
