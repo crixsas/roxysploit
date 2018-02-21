@@ -6,6 +6,8 @@ import sys
 import socket
 import requests
 import httplib
+import urllib
+import whois
 import string
 import time
 import random
@@ -15,6 +17,7 @@ import logging
 from lxml import etree
 from urlparse import urlparse
 from struct import pack
+from subprocess import check_output
 
 plugin_description = "Author: Eitenne\nAbout: Automated scanner to get information"
 shelly = "shellcode"
@@ -108,19 +111,6 @@ def main():
        time.sleep(2)
        print "\033[1;92m[*]\033[1;m Starting website reconnaissance\033[1;m"
        os.system('sh ' + RescoursesDir + '/plugins/Utilities/extractor.sh ' + url + '')
-       cf()
- else:
-    print ""
-
-def cf():
-    link = ip
-    for sbdm in subdomains:
-      try:
-         hosts = str(sbdm) + "." + str(link)
-         trueip = socket.gethostbyname(str(hosts))
-         print "[!] Discovered >> " + str(trueip)
-      except:
-             pass
     elif et == 'no':
         print "Goodbye ;("
         sys.exit()
