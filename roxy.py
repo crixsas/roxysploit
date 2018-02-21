@@ -44,7 +44,9 @@ for item in test:
 
 options_sl = ['use','retarget','!','clean','others','gen','show All','?','clear','exit','banner','help', 'show','ipnet','show Exploits','show Payloads','show Utilities']
 
-addrs = glob.glob("plugins/*.plugin")
+addrs = glob.glob("plugins/Payloads/*.plugin")
+addrs += glob.glob("plugins/Exploits/*.plugin")
+addrs += glob.glob("plugins/Utilities/*.plugin")
 total_plugins = len(addrs)
 tabcomp = options_sl
 #tabcomp +=addrs
