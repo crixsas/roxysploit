@@ -32,7 +32,7 @@ if not os.geteuid() == 0:
 
 version = "4.9.3"
 intname = "rsf"
-lan_ip = os.popen("ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'").read()
+lan_ip = os.popen("hostname -i | awk {' print $1 '}").read()
 public_ip = os.popen("wget http://ipinfo.io/ip -qO -").read()
 
 dir = "plugins/"
@@ -155,11 +155,9 @@ time.sleep(0.3)
 print "\033[1;92m[+]\033[1;m Detected Version => %s" % (version)
 time.sleep(1)
 header.main_header()
-mac_address = check_output("/sbin/ifconfig wlan0 | awk '/ether/{print $2}'", shell=True)
+mac_address = os.popen("ip addr | grep 'state UP' -A1 | tail -n1 | awk '{print $2}' | cut -f1  -d'/'").read()
 
-lan_ip = check_output("/sbin/ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'", shell=True)
-
-gateway_ip = check_output("/sbin/ip route | awk '/default/ { printf $3 }'", shell=True)
+gateway_ip = check_output("/sbin/ip route | awk '/default/' | awk {' print $3 '} | sed -n 1p", shell=True)
 
 print """
 		> Local IP Address: %s                > Gateway IP: %s
