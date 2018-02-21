@@ -174,8 +174,20 @@ def main():
         time.sleep(0.5)
         if terminal[0:3] =='use':
             if terminal[4:] == terminal[4:]:
-                os.system(PLUGIN_EXEC + terminal[4:] + PLUGIN_END)
-                main()
+                Exploit_check = "plugins/Exploits/%s.plugin" % (terminal[4:])
+                Payload_check = "plugins/Payloads/%s.plugin" % (terminal[4:])
+                Utilities_check = "plugins/Utilities/%s.plugin" % (terminal[4:])
+                if os.path.exists(Exploit_check) == True:
+                   os.system("python plugins/Exploits/%s.plugin" % (terminal[4:]))
+                   main()
+                elif os.path.exists(Payload_check) == True:
+                   os.system("python plugins/Payloads/%s.plugin" % (terminal[4:]))
+                   main()
+                elif os.path.exists(Utilities_check) == True:
+                   os.system("python plugins/Utilities/%s.plugin" % (terminal[4:]))
+                   main()
+                else:
+                    print "[?] %s: could not be found" % (terminal[4:])
             #elif terminal[4:32] =='example':
                 #example()
                 #main()
