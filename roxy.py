@@ -42,7 +42,7 @@ for item in test:
     if item.endswith(".plugin"):
         plugins_all = item.split('.')[0]
 
-options_sl = ['use','retarget','!','clean','others','gen','all','plugins','?','clear','exit','banner','help', 'show','ipnet','exploits','payloads','utilities']
+options_sl = ['use','retarget','!','clean','others','gen','show All','?','clear','exit','banner','help', 'show','ipnet','show Exploits','show Payloads','show Utilities']
 
 addrs = glob.glob("plugins/*.plugin")
 total_plugins = len(addrs)
@@ -204,8 +204,17 @@ def main():
         elif terminal[0:21] == "retarget":
              retarget.edit()
              main()
-        elif terminal[0:17] == 'show plugins':
+        elif terminal[0:17] == 'show All':
             modules.all()
+            main()
+        elif terminal[0:17] == 'show Exploits':
+            modules.exploits()
+            main()
+        elif terminal[0:17] == 'show Utilities':
+            modules.utilities()
+            main()
+        elif terminal[0:17] == 'show Payloads':
+            modules.payloads()
             main()
         elif terminal[0:4] =='help':
             help.help()
