@@ -1,0 +1,130 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+import re
+import sys
+import socket
+import requests
+import httplib
+import string
+import time
+import random
+import sys
+import os
+import logging
+from lxml import etree
+from urlparse import urlparse
+from struct import pack
+
+plugin_description = "Author: Eitenne\nAbout: Automated scanner to get information"
+shelly = "shellcode"
+intname = "rsf"
+det = sys.argv[0]
+dala = det.split('.')[-2]
+fin = dala.split('plugins/')[-1]
+__plugin__      = "%s.plugin" % (fin)
+RescoursesDir = os.getcwd()
+dandtime = time.strftime("%H:%M:%S")
+logfile = "%s/storage/logs/%s.log" % (RescoursesDir,dandtime)
+
+class Tee(object):
+  def __init__(self):
+    self.file = open(logfile, 'a')
+    self.stdout = sys.stdout
+
+  def __del__(self):
+    sys.stdout = self.stdout
+    self.file.close()
+
+  def write(self, data):
+    self.file.write(data)
+    self.stdout.write(data)
+
+sys.stdout = Tee()
+
+tree = etree.parse("storage/logs/config.xml")
+for user in tree.xpath("/configuration/config/default_target"):
+	ip = "%s" % (user.text)
+
+def dash():
+    while True:
+        line_1 = "" + intname + " (\033[1;31m" + fin + "\033[1;m) > "
+        terminal = raw_input(line_1).lower()
+        time.sleep(0.5)
+        if terminal == 'help':
+            print "\n"
+            print "Core Commands"
+            print "============="
+            print ""
+            print "  Command         Description"
+            print "  -------         -----------"
+            print "  help            show help menu"
+            print "  execute         run the plugin"
+            print "  exit            exit the current plugin"
+            print ""
+        elif terminal == 'execute':
+            main()
+        elif terminal == 'exit':
+            exit()
+        else:
+            print "Unknown syntax: %s" % (terminal)
+
+def main():
+    iper = "google.com"
+    default10 = "yes"
+    print "\033[1;94m[?]\033[1;m Configuring Plugin"
+    time.sleep(1)
+    print ""
+    print "Name             Set Value"
+    print "----             ----------"
+    print "Target           %s" % (ip)
+    print "Plugin           Scan"
+    print "\n"
+    et = raw_input("\033[1;94m[?]\033[1;m Execute Plugins? [" + default10 + "]: ")  or default10
+    if et == 'yes':
+       url = ip
+       print "\033[1;94m[?]\033[1;m Getting reverse dns\033[1;m"
+       reversed_dns = urllib.urlopen('http://api.hackertarget.com/reverseiplookup/?q=' + url).read()
+       print "\033[1;94m[?]\033[1;m Getting geoip\033[1;m"
+       geoip = urllib.urlopen('http://api.hackertarget.com/geoip/?q=' + url).read()
+       print "\033[1;94m[?]\033[1;m Scanning ports\033[1;m"
+       nmap = check_output("nmap -A -sS " + url + "", shell=True)
+       print "\033[1;94m[?]\033[1;m Getting httpheaders\033[1;m"
+       httpheaders = urllib.urlopen('http://api.hackertarget.com/httpheaders/?q=' + url).read()
+       print "\033[1;94m[?]\033[1;m Getting tracert\033[1;m"
+       tracert = urllib.urlopen('http://api.hackertarget.com/mtr/?q=' + url).read()
+       print "\033[1;92m[*]\033[1;m Reverse dns information:"
+       print reversed_dns
+       print "\033[1;92m[*]\033[1;m Geoip information:\033[1;m"
+       print geoip
+       print "\033[1;92m[*]\033[1;m Port scan information:\033[1;m"
+       print nmap
+       print "\033[1;92m[*]\033[1;m httpheader information:\033[1;m"
+       print httpheaders
+       print "\033[1;92m[*]\033[1;m tracert information:\033[1;m"
+       print tracert
+       time.sleep(0.7)
+       print "\033[1;92m[*]\033[1;m Starting cloudflare resolver\033[1;m"
+       time.sleep(2)
+       print "\033[1;92m[*]\033[1;m Starting website reconnaissance\033[1;m"
+       os.system('sh ' + RescoursesDir + '/plugins/Utilities/extractor.sh ' + url + '')
+       cf()
+ else:
+    print ""
+
+def cf():
+    link = ip
+    for sbdm in subdomains:
+      try:
+         hosts = str(sbdm) + "." + str(link)
+         trueip = socket.gethostbyname(str(hosts))
+         print "[!] Discovered >> " + str(trueip)
+      except:
+             pass
+    elif et == 'no':
+        print "Goodbye ;("
+        sys.exit()
+    else:
+        print "\033[1;92m[!] No options were chosen.\033[1;m"
+
+dash()
