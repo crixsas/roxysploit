@@ -17,7 +17,6 @@ def help():
     print "  clear           clear screen"
     print "  show            list a module"
     print "  clean           clear all log files"
-    print "  plugin          Gives info about plugins"
     print "  exit            Quit framework"
     print "  search          Search for Payloads::Exploits::Others"
     print "  rsfupdate       Update the roxysploit package"
