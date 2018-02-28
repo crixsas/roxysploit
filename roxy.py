@@ -219,9 +219,6 @@ def main():
         elif terminal[0:4] =='help':
             help.help()
             main()
-        elif terminal[0:41] =='plugin':
-            os.system('python plugins/hello.plugin')
-            main()
         elif terminal[0:7] == 'show':
             showlist()
             main()
