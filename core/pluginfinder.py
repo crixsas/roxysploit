@@ -5,7 +5,7 @@ import sys
 from subprocess import check_output
 
 
-x = pass
+x = ""
 #ripas = os.path.splitext(content)[-2]
 #datasw = ripas.split('/')[1]
 
