@@ -258,7 +258,10 @@ Plugin Category
 
  Name
  ----
- Plugins
+ All
+ Exploits
+ Payloads
+ Utilities
 """
 
 def postit():
