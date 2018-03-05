@@ -38,9 +38,9 @@ public_ip = os.popen("wget http://ipinfo.io/ip -qO -").read()
 #dir = "plugins/"
 #test=os.listdir(dir)
 
-for item in test:
-    if item.endswith(".plugin"):
-        plugins_all = item.split('.')[0]
+#for item in test:
+#    if item.endswith(".plugin"):
+#        plugins_all = item.split('.')[0]
 
 options_sl = ['use','retarget','!','clean','others','gen','show All','?','clear','exit','banner','help', 'show','ipnet','show Exploits','show Payloads','show Utilities']
 
