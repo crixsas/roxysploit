@@ -29,14 +29,14 @@
 #!/usr/bin/python
 
 ###################################################
-# get.lhost = Create an input for lhost           #
+# get.lhost() = Create an input for lhost           #
 # ask.lhost = Print out the lhost                 #
 ##
 # ask.target = print out target                   #
-# get.target = Create an input for target         #
+# get.target() = Create an input for target         #
 ##
 # ask.lport = print out lport                     #
-# get.lport = Create an input for lport           #
+# get.lport() = Create an input for lport           #
 ##
 # run("options") = Execute a shell command        #
 ##
@@ -58,6 +58,10 @@ get.lport()
 get.target() #input.target
 get.mac()
 
+ask.lhost
+ask.target
+ask.lport
+ask.mac
 #RELOADS THE CONFIGS (NEEDED IF USING INPUTS)#
 del sys.modules['dave']
 from dave import *
