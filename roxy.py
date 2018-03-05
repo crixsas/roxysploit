@@ -35,8 +35,8 @@ intname = "rsf"
 lan_ip = os.popen("hostname -i | awk {' print $1 '}").read()
 public_ip = os.popen("wget http://ipinfo.io/ip -qO -").read()
 
-dir = "plugins/"
-test=os.listdir(dir)
+#dir = "plugins/"
+#test=os.listdir(dir)
 
 for item in test:
     if item.endswith(".plugin"):
