@@ -30,7 +30,7 @@ if not os.geteuid() == 0:
     sys.exit("""\033[1;91m\n[\033[1;m!\033[1;91m]\033[1;m RoxySploit Requires root access!!\n\033[1;m""")
 
 
-version = "4.9.3"
+version = "4.9.5"
 intname = "rsf"
 lan_ip = os.popen("hostname -i | awk {' print $1 '}").read()
 public_ip = os.popen("wget http://ipinfo.io/ip -qO -").read()
