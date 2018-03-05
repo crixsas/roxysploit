@@ -2,7 +2,7 @@
 
 import os, time, subprocess
 from sys import stdout
-
+import sys
 class colors:
     W  = '\033[0m'  
     R  = '\033[31m' 
