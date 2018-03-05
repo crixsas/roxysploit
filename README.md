@@ -24,6 +24,49 @@
 ## + <a href="https://www.youtube.com/channel/UCvydKPHB5fzqrJpS6BUqdRQ"> Youtube</a>
 ## + <a href="https://twitter.com/0x09f"> Twitter</a>
 
+## Plugin example
+<pre>
+#!/usr/bin/python
+
+###################################################
+# get.lhost = Create an input for lhost           #
+# ask.lhost = Print out the lhost                 #
+##
+# ask.target = print out target                   #
+# get.target = Create an input for target         #
+##
+# ask.lport = print out lport                     #
+# get.lport = Create an input for lport           #
+##
+# run("options") = Execute a shell command        #
+##
+# warning("oops becareful")                       #
+# fail("oh no something bad happend")             #
+# success("Well done") = Create a Success         #
+##
+# dashboard() = Get plugin dashboard for startup  #
+##
+# del sys.modules['dave'] = reload module         #
+# from dave import * = reimport modules           #
+###################################################
+
+from plugin_support import *
+
+dashboard()
+get.lhost() #input.lhost
+get.lport()
+get.target() #input.target
+get.mac()
+
+#RELOADS THE CONFIGS (NEEDED IF USING INPUTS)#
+del sys.modules['dave']
+from dave import *
+##############################################
+
+run('uname -a')
+warning("There was an issue oh no lol")
+fail("RIP get fuked")
+success("heheheheheh good well done")</pre>
 <img src="carbon.png">
 
 ## Video Tutorials
