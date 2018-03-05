@@ -11,9 +11,9 @@
 |MacOSX|Needs porting
 |Windows| Ha no.
 
-## This is a release of the roxysploit you can always support me at btc: 15oGX5N4dYFqa21owv8etJ7xkxE8k4jb1v
+## Please support me at btc: 15oGX5N4dYFqa21owv8etJ7xkxE8k4jb1v
 ## How to install
-<pre>$ git clone https://github.com/Eitenne/roxysploit.git; cd roxysploit; sudo /bin/bash install</pre>
+<pre>$ git clone https://github.com/Eitenne/roxysploit.git; cd roxysploit; sudo /usr/bin/python2 installer.py</pre>
 
 ## Legal Disclamer:
   The author does not hold any responsibility for the bad use of this tool,
