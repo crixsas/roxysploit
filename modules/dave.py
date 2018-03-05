@@ -70,7 +70,7 @@ def dashboard():
         elif terminal == 'execute':
             pass
         elif terminal == "info":
-            os.system('cat %s.info' % (fin))
+            os.system('cat plugins/About/%s.info' % (fin))
             dashboard()
         elif terminal == 'exit':
             sys.exit()
