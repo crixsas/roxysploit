@@ -95,7 +95,7 @@ class ask():
 
     shitlist = etree.parse("Recoureses/mac.xml")
     for z in shitlist.xpath("/configuration/config/default_target"):
-	    lport = "%s" % (z.text)
+	    mac = "%s" % (z.text)
 
 def run(cmd):
     x = check_output(cmd, shell=True)
