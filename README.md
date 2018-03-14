@@ -1,4 +1,4 @@
-# Last updated on: 5 March 2018
+# Last updated on: 14 March 2018
 # Added better plugin support
 |Tested on|.
 |---|---
@@ -44,15 +44,12 @@
 # fail("oh no something bad happend")             #
 # success("Well done") = Create a Success         #
 ##
-# dashboard() = Get plugin dashboard for startup  #
-##
 # del sys.modules['dave'] = reload module         #
 # from dave import * = reimport modules           #
 ###################################################
 
 from plugin_support import *
 
-dashboard()
 get.lhost() #input.lhost
 get.lport()
 get.target() #input.target
