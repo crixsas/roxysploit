@@ -20,4 +20,5 @@ def help():
     print "  exit            Quit framework"
     print "  search          Search for Payloads::Exploits::Others"
     print "  rsfupdate       Update the roxysploit package"
+    print "  session         Show configuration settings"
     print ""
