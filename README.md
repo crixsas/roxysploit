@@ -67,7 +67,8 @@ from dave import *
 run('uname -a')
 warning("There was an issue oh no lol")
 fail("RIP get fuked")
-success("heheheheheh good well done")</pre>
+success("heheheheheh good well done")
+text("random")</pre>
 <img src="carbon.png">
 
 ## Video Tutorials
