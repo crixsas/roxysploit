@@ -85,7 +85,7 @@ class ask():
     for l in tree.xpath("/configuration/config/default_target"):
         lhost = "%s" % (l.text)
 
-    treebunck = etree.parse("storage/logs/config.xml")
+    treebunck = etree.parse("Recoureses/target.xml")
     for t in treebunck.xpath("/configuration/config/default_target"):
 	    target = "%s" % (t.text)
 
