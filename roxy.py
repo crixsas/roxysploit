@@ -29,8 +29,8 @@ time.sleep(1)
 if not os.geteuid() == 0:
     sys.exit("""\033[1;91m\n[\033[1;m!\033[1;91m]\033[1;m RoxySploit Requires root access!!\n\033[1;m""")
 
-
-version = "4.9.5"
+version_open = open("storage/version","r")
+version = version_open.read()
 intname = "rsf"
 lan_ip = os.popen("hostname -i | awk {' print $1 '}").read()
 public_ip = os.popen("wget http://ipinfo.io/ip -qO -").read()
@@ -42,7 +42,7 @@ public_ip = os.popen("wget http://ipinfo.io/ip -qO -").read()
 #    if item.endswith(".plugin"):
 #        plugins_all = item.split('.')[0]
 
-options_sl = ['use','retarget','!','clean','others','gen','show All','?','clear','exit','banner','help', 'show','ipnet','show Exploits','show Payloads','show Utilities']
+options_sl = ['session','Exploits','Utilities','Payloads','use','retarget','!','clean','others','gen','show All','?','clear','exit','banner','help', 'show','ipnet','show Exploits','show Payloads','show Utilities']
 
 addrs = glob.glob("plugins/Payloads/*.plugin")
 addrs += glob.glob("plugins/Exploits/*.plugin")
@@ -155,14 +155,13 @@ time.sleep(0.3)
 print "\033[1;92m[+]\033[1;m Detected Version => %s" % (version)
 time.sleep(1)
 header.main_header()
+help.help()
+os.system('python modules/session.py')
 mac_address = os.popen("ip addr | grep 'state UP' -A1 | tail -n1 | awk '{print $2}' | cut -f1  -d'/'").read()
 
 gateway_ip = check_output("/sbin/ip route | awk '/default/' | awk {' print $3 '} | sed -n 1p", shell=True)
 
-print """
-		> Local IP Address: %s                > Gateway IP: %s
-		> MAC Address: %s
-		""" % (str(lan_ip), str(gateway_ip), str(mac_address))
+print """> Local IP Address: %s | > Gateway IP: %s | > MAC Address: %s""" % (str(lan_ip), str(gateway_ip), str(mac_address))
 
 PLUGIN_END = ".plugin"
 PLUGIN_EXEC = "python plugins/"
@@ -219,7 +218,10 @@ def main():
         elif terminal[0:4] =='help':
             help.help()
             main()
-        elif terminal[0:7] == 'show':
+        elif terminal[0:] == 'session':
+            os.system('python modules/session.py')
+            main()
+        elif terminal[0:] == 'show':
             showlist()
             main()
         elif terminal[0:2] =='?':
@@ -241,9 +243,6 @@ def main():
             main()
         elif terminal[0:9] =='exit':
             exit()
-        elif terminal[0:1] =='!':
-            os.system(terminal[1:])
-            main()
         else:
             print "Command not found:", terminal
             main()
@@ -265,11 +264,10 @@ Plugin Category
 """
 
 def postit():
-	header.main_header()
-	print """
-		> Local IP Address: %s                > Gateway IP: %s
-		> MAC Address: %s
-		""" % (str(lan_ip), str(gateway_ip), str(mac_address))
+    header.main_header()
+    help.help()
+    os.system('python modules/session.py')
+    print """> Local IP Address: %s | > Gateway IP: %s | > MAC Address: %s""" % (str(lan_ip), str(gateway_ip), str(mac_address))
 
 def start():
     menu.main_info()
