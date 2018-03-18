@@ -42,7 +42,7 @@ def lhost():
 
 
 def target():
-    tree = etree.parse("Recoureses/target.xml")
+    tree = etree.parse("storage/logs/config.xml")
     for user in tree.xpath("/configuration/config/default_target"):
         print "\033[1;94m[?]\033[1;m Target :: Enter a targets address"
         default_target = raw_input('\033[1;92m[+]\033[1;m Target [' + user.text + ']: ') or user.text
@@ -52,7 +52,7 @@ def target():
       		<default_target>""" + default_target + """</default_target>
     </config>
 </configuration>"""
-    retarget_file = open("Recoureses/target.xml", "w")
+    retarget_file = open("storage/logs/config.xml", "w")
     retarget_file.write(retarget_xml)
     retarget_file.close()
 
