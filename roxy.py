@@ -243,8 +243,11 @@ def main():
             main()
         elif terminal[0:9] =='exit':
             exit()
+	elif terminal[0:1] =='!':
+	    os.system(terminal[1:])
+            main()
         else:
-            print "Command not found:", terminal
+            pass
             main()
     except(KeyboardInterrupt):
         print "\n"
