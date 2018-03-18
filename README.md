@@ -1,4 +1,4 @@
-# Last updated on: 14 March 2018
+# Last updated on: 18 March 2018
 # Added better plugin support
 |Tested on|.
 |---|---
