@@ -26,9 +26,16 @@ from core import retarget
 os.system('clear')
 
 time.sleep(1)
+default_uid = "yes"
 if not os.geteuid() == 0:
-    sys.exit("""\033[1;91m\n[\033[1;m!\033[1;91m]\033[1;m RoxySploit Requires root access!!\n\033[1;m""")
-
+    print """\033[1;91m\n[\033[1;m!\033[1;91m]\033[1;m You are running roxysploit as user.\033[1;m"""
+    try_uid = raw_input('\033[1;92m[+]\033[1;m Do you want to continue [' + default_uid + ']: ') or default_uid
+    if try_uid == "yes":
+        pass
+    else:
+        sys.exit()
+else:
+    pass
 version_open = open("storage/version","r")
 version = version_open.read()
 intname = "rsf"
