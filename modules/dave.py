@@ -110,3 +110,6 @@ def fail(msg):
 
 def success(msg):
     print "[\033[1m"+colors.G+"!"+colors.W+"]", msg
+
+def text(msg):
+    print "\033[1;94m[*]\033[1;m", msg
