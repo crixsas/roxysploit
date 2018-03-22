@@ -135,7 +135,7 @@ if CHECK_XML == False:
 else:
     var = "1"
 
-time.sleep(10)
+time.sleep(5)
 print "\033[1;94m[*]\033[1;m Retargetting Session"
 time.sleep(1)
 tree = etree.parse("storage/logs/config.xml")
