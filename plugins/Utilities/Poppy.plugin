@@ -45,6 +45,7 @@ sys.stdout = Tee()
 tree = etree.parse("storage/logs/config.xml")
 for user in tree.xpath("/configuration/config/default_target"):
 	ip = "%s" % (user.text)
+	target = ip
 
 def dash():
     while True:
