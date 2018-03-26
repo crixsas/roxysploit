@@ -26,7 +26,8 @@
 
 ## Plugin example
 <pre>
-#!/usr/bin/python
+Description = 'Some description at the top of the plugin file because its how it works :/'
+from plugin_support import *
 
 ###################################################
 # get.lhost() = Create an input for lhost           #
@@ -47,8 +48,6 @@
 # del sys.modules['dave'] = reload module         #
 # from dave import * = reimport modules           #
 ###################################################
-
-from plugin_support import *
 
 get.lhost() #input.lhost
 get.lport()
