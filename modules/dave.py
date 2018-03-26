@@ -8,6 +8,7 @@ import time
 import random
 import sys
 import os
+import glob
 from lxml import etree
 from urlparse import urlparse
 from struct import pack
@@ -70,7 +71,14 @@ def dashboard():
         elif terminal == 'execute':
             pass
         elif terminal == "info":
-            os.system('cat plugins/%s.info' % (fin))
+            with open("plugins/" + fin + ".plugin", 'r') as myfile:
+                data = myfile.read().splitlines()
+                desc = data[0]
+                datar = desc.replace("Description = '", "")
+                x = datar.rstrip("'")
+                if x == "#!/usr/bin/python":
+                    x = "\033[1;91mDescription has not yet been implemented.\033[1;m"
+                print x
             dashboard()
         elif terminal == 'exit':
             sys.exit()
