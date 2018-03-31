@@ -1,4 +1,4 @@
-#!/usr/bin/python
+Description = 'Detect Architecture if x64/64bit or x86/32bit'
 
 import sys, os, time
 import logging
