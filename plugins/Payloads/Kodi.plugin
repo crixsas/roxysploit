@@ -1,5 +1,4 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
+Description = 'Kodi is a fantastic streaming platform Created a malicious addon(backdoor) via kodi.tv '
 
 import os
 import sys
