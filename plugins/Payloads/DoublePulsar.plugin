@@ -1,4 +1,4 @@
-#!/usr/bin/python
+Description = 'Remotely inject a malicious dll backdoor into a windows computer.'
 
 import os
 import sys
