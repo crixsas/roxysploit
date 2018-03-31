@@ -1,4 +1,4 @@
-#!/usr/bin/python
+Description = 'Encrypt your home directory'
 
 import sys, os, time
 import logging
