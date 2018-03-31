@@ -1,5 +1,4 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
+Description = 'Bruteforce dns server using wordlist'
 
 import re
 import sys
@@ -17,7 +16,7 @@ from lxml import etree
 from urlparse import urlparse
 from struct import pack
 
-plugin_description = "Author: Eitenne\nAbout: Basic dns bruteforce using wordlist"
+plugin_description = "Bruteforce dns server using wordlist"
 intname = "rsf"
 det = sys.argv[0]
 dala = det.split('.')[-2]
