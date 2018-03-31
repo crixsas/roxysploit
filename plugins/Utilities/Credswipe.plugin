@@ -1,5 +1,4 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
+Description = 'Credit card cloner using card reader'
 
 import re
 import sys
