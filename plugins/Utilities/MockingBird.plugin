@@ -1,5 +1,4 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
+Description = 'This is a cross-platform Remote Access Trojan'
 
 import re
 import sys
@@ -13,7 +12,7 @@ from lxml import etree
 from urlparse import urlparse
 from struct import pack
 
-plugin_description = "Author: Eitenne\nAbout: This is a cross-platform Remote Access Trojan."
+plugin_description = "This is a cross-platform Remote Access Trojan."
 intname = "rsf"
 det = sys.argv[0]
 dala = det.split('.')[-2]
