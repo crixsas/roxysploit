@@ -1,4 +1,4 @@
-#!/usr/bin/python
+Description = 'Automatically scan the inner network to detect whether they are vulnerable.'
 
 import sys, os, time
 import logging
