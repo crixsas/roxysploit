@@ -1,9 +1,10 @@
-#!/usr/bin/python
+Description = 'Mass vulnerability check on finding any SSL Vulnerabilities.'
+
 import os, sys, time
 import logging
 from lxml import etree
 
-intname = "rsf "
+intname = "rsf"
 det = sys.argv[0]
 fin = det.split('.')[-2]
 __plugin__      = "%s.plugin" % (fin)
