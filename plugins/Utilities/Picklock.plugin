@@ -1,4 +1,4 @@
-#!/usr/bin/python
+Description = 'Picklock/bruteforce Mulitple devices Pincodes such as android usb debugging.'
 
 __plugin__      = "picklock.plugin"
 
