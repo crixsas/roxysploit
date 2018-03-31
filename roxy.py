@@ -40,7 +40,7 @@ version_open = open("storage/version","r")
 version = version_open.read()
 intname = "rsf"
 lan_ip = os.popen("hostname -i | awk {' print $1 '}").read()
-public_ip = os.popen("wget http://ipinfo.io/ip -qO -").read()
+#public_ip = os.popen("wget http://ipinfo.io/ip -qO -").read()
 
 #dir = "plugins/"
 #test=os.listdir(dir)
