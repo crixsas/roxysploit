@@ -1,5 +1,4 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
+Description = 'Automated scanner to get information'
 
 import re
 import sys
@@ -19,7 +18,7 @@ from urlparse import urlparse
 from struct import pack
 from subprocess import check_output
 
-plugin_description = "Author: Eitenne\nAbout: Automated scanner to get information"
+plugin_description = "Automated scanner to get information"
 shelly = "shellcode"
 intname = "rsf"
 det = sys.argv[0]
