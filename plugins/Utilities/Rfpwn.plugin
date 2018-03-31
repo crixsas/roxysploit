@@ -1,5 +1,4 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
+Description = 'Suitable device to bruteforce a special AM OOK or raw binary signal'
 
 import re
 import sys
@@ -16,7 +15,7 @@ from lxml import etree
 from urlparse import urlparse
 from struct import pack
 
-plugin_description = "Author: Eitenne\nAbout: Suitable device to bruteforce a special AM OOK or raw binary signal. "
+plugin_description = "Suitable device to bruteforce a special AM OOK or raw binary signal"
 shelly = "shellcode"
 intname = "rsf"
 det = sys.argv[0]
