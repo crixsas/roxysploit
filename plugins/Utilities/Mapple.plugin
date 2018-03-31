@@ -1,5 +1,4 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
+Description = 'Get itunes backup manifest key'
 
 import re
 import sys
@@ -13,7 +12,7 @@ from lxml import etree
 from urlparse import urlparse
 from struct import pack
 
-plugin_description = "Author: Eitenne\nAbout: Get itunes backup manifest key"
+plugin_description = "Get itunes backup manifest key"
 shelly = "shellcode"
 intname = "rsf"
 det = sys.argv[0]
