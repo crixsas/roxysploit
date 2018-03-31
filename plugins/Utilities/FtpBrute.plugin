@@ -1,5 +1,4 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
+Description = 'Brute-force attack an ftp(file transfer protocol) server'
 
 import re
 import sys
