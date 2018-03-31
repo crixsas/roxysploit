@@ -1,4 +1,4 @@
-#!/usr/bin/python
+Description = 'load a usb to steal all credentials from a windows computer in seconds.'
 
 import os, sys, time
 import logging
