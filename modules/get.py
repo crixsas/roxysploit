@@ -26,7 +26,7 @@ dandtime = time.strftime("%H:%M:%S")
 #	ip = "%s" % (user.text)
 
 def lhost():
-    tree = etree.parse("Recoureses/lhost.xml")
+    tree = etree.parse("Resources/lhost.xml")
     for user in tree.xpath("/configuration/config/default_target"):
         print "\033[1;94m[?]\033[1;m Listener :: Enter a listening host"
         default_target = raw_input('\033[1;92m[+]\033[1;m Listener [' + user.text + ']: ') or user.text
@@ -36,7 +36,7 @@ def lhost():
       		<default_target>""" + default_target + """</default_target>
     </config>
 </configuration>"""
-    retarget_file = open("Recoureses/lhost.xml", "w")
+    retarget_file = open("Resources/lhost.xml", "w")
     retarget_file.write(retarget_xml)
     retarget_file.close()
 
@@ -58,7 +58,7 @@ def target():
 
 
 def lport():
-    tree = etree.parse("Recoureses/lport.xml")
+    tree = etree.parse("Resources/lport.xml")
     for user in tree.xpath("/configuration/config/default_target"):
         print "\033[1;94m[?]\033[1;m Lport :: Enter a listening port"
         default_target = raw_input('\033[1;92m[+]\033[1;m Lport [' + user.text + ']: ') or user.text
@@ -68,13 +68,13 @@ def lport():
       		<default_target>""" + default_target + """</default_target>
     </config>
 </configuration>"""
-    retarget_file = open("Recoureses/lport.xml", "w")
+    retarget_file = open("Resources/lport.xml", "w")
     retarget_file.write(retarget_xml)
     retarget_file.close()
 
 
 def mac():
-    tree = etree.parse("Recoureses/mac.xml")
+    tree = etree.parse("Resources/mac.xml")
     for user in tree.xpath("/configuration/config/default_target"):
         print "\033[1;94m[?]\033[1;m Mac :: Enter a mac address"
         default_target = raw_input('\033[1;92m[+]\033[1;m MAC [' + user.text + ']: ') or user.text
@@ -84,6 +84,6 @@ def mac():
       		<default_target>""" + default_target + """</default_target>
     </config>
 </configuration>"""
-    retarget_file = open("Recoureses/mac.xml", "w")
+    retarget_file = open("Resources/mac.xml", "w")
     retarget_file.write(retarget_xml)
     retarget_file.close()
