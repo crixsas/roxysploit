@@ -105,6 +105,27 @@ class ask():
     for z in shitlist.xpath("/configuration/config/default_target"):
 	    mac = "%s" % (z.text)
 
+def before_execute():
+    default10 = "yes"
+    time.sleep(0.2)
+    print "\033[1;94m[?]\033[1;m Configuring Plugin"
+    time.sleep(1)
+    print ""
+    print "Name             Set Value"
+    print "----             ----------"
+    print "Target           %s" % (ask.target)
+    print "Listener         %s" % (ask.lhost)
+    print "Listener Port    %s" % (ask.lport)
+    print "Plugin           %s" % (fin)
+    print "\n"
+    et = raw_input("\033[1;94m[?]\033[1;m Execute Plugins? [" + default10 + "]: ")  or default10
+    if et == 'yes':
+        pass
+    elif et == 'no':
+        exit()
+    else:
+        print "\033[1;92m[!] No options were chosen.\033[1;m"
+	
 def run(cmd):
     x = check_output(cmd, shell=True)
     i = "[\033[1m"+colors.B+"!"+colors.W+"] "
