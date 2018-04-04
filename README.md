@@ -62,7 +62,7 @@ ask.mac
 del sys.modules['dave']
 from dave import *
 ##############################################
-
+before_execute()
 run('uname -a')
 warning("There was an issue oh no lol")
 fail("RIP get fuked")
