@@ -8,9 +8,28 @@ import time
 import random
 import sys
 import os
+import glob
 from lxml import etree
 from urlparse import urlparse
 from struct import pack
+import rlcompleter, readline
+import subprocess
+from sys import stdout
+from subprocess import check_output
+
+class colors:
+    W  = '\033[0m'  
+    R  = '\033[31m' 
+    G  = '\033[32m' 
+    O  = '\033[33m' 
+    B  = '\033[34m' 
+    P  = '\033[35m' 
+    C  = '\033[36m' 
+    GR = '\033[40m'
+    GY = '\033[43m'
+    GE = '\033[41m'
+    GW = '\033[4m'
+    HH = '\033[1m'
 
 intname = "rsf"
 det = sys.argv[0]
@@ -20,70 +39,106 @@ __plugin__      = "%s.plugin" % (fin)
 RescoursesDir = os.getcwd()
 dandtime = time.strftime("%H:%M:%S")
 
+tabcomp = ['help','execute','info','exit']
 
-#tree = etree.parse("storage/logs/config.xml")
-#for user in tree.xpath("/configuration/config/default_target"):
-#	ip = "%s" % (user.text)
+def completer(text, state):
+    options = [x for x in tabcomp if x.startswith(text)]
+    try:
+        return options[state]
+    except IndexError:
+        return None
 
-def lhost():
+readline.set_completer(completer)
+readline.parse_and_bind("tab: complete")
+
+def dashboard():
+    try:
+        line_1 = "" + intname + "(\033[1;31m" + fin + "\033[1;m) > "
+        terminal = raw_input(line_1).lower()
+        time.sleep(0.2)
+        if terminal == 'help':
+            print "Core Commands"
+            print "============="
+            print ""
+            print "  Command         Description"
+            print "  -------         -----------"
+            print "  help            show help menu"
+            print "  execute         run the plugin"
+            print "  exit            exit the current plugin"
+            print "  info            show plugin description"
+            print ""
+            dashboard()
+        elif terminal == 'execute':
+            pass
+        elif terminal == "info":
+            with open("plugins/" + fin + ".plugin", 'r') as myfile:
+                data = myfile.read().splitlines()
+                desc = data[0]
+                datar = desc.replace("Description = '", "")
+                x = datar.rstrip("'")
+                if x == "#!/usr/bin/python":
+                    x = "\033[1;91mDescription has not yet been implemented.\033[1;m"
+                print x
+            dashboard()
+        elif terminal == 'exit':
+            sys.exit()
+        else:
+            print "Unknown syntax: %s" % (terminal)
+            dashboard()
+    except KeyboardInterrupt:
+        sys.exit()
+
+class ask():
     tree = etree.parse("Resources/lhost.xml")
-    for user in tree.xpath("/configuration/config/default_target"):
-        print "\033[1;94m[?]\033[1;m Listener :: Enter a listening host"
-        default_target = raw_input('\033[1;92m[+]\033[1;m Listener [' + user.text + ']: ') or user.text
-    retarget_xml = """<?xml version="1.0" encoding="UTF-8"?>
-<configuration>
-    <config name="roxysploit">
-      		<default_target>""" + default_target + """</default_target>
-    </config>
-</configuration>"""
-    retarget_file = open("Resources/lhost.xml", "w")
-    retarget_file.write(retarget_xml)
-    retarget_file.close()
+    for l in tree.xpath("/configuration/config/default_target"):
+        lhost = "%s" % (l.text)
 
+    treebunck = etree.parse("storage/logs/config.xml")
+    for t in treebunck.xpath("/configuration/config/default_target"):
+	    target = "%s" % (t.text)
 
-def target():
-    tree = etree.parse("storage/logs/config.xml")
-    for user in tree.xpath("/configuration/config/default_target"):
-        print "\033[1;94m[?]\033[1;m Target :: Enter a targets address"
-        default_target = raw_input('\033[1;92m[+]\033[1;m Target [' + user.text + ']: ') or user.text
-    retarget_xml = """<?xml version="1.0" encoding="UTF-8"?>
-<configuration>
-    <config name="roxysploit">
-      		<default_target>""" + default_target + """</default_target>
-    </config>
-</configuration>"""
-    retarget_file = open("storage/logs/config.xml", "w")
-    retarget_file.write(retarget_xml)
-    retarget_file.close()
+    buckit = etree.parse("Resources/lport.xml")
+    for f in buckit.xpath("/configuration/config/default_target"):
+	    lport = "%s" % (f.text)
 
+    shitlist = etree.parse("Resources/mac.xml")
+    for z in shitlist.xpath("/configuration/config/default_target"):
+	    mac = "%s" % (z.text)
 
-def lport():
-    tree = etree.parse("Resources/lport.xml")
-    for user in tree.xpath("/configuration/config/default_target"):
-        print "\033[1;94m[?]\033[1;m Lport :: Enter a listening port"
-        default_target = raw_input('\033[1;92m[+]\033[1;m Lport [' + user.text + ']: ') or user.text
-    retarget_xml = """<?xml version="1.0" encoding="UTF-8"?>
-<configuration>
-    <config name="roxysploit">
-      		<default_target>""" + default_target + """</default_target>
-    </config>
-</configuration>"""
-    retarget_file = open("Resources/lport.xml", "w")
-    retarget_file.write(retarget_xml)
-    retarget_file.close()
+def before_execute():
+    default10 = "yes"
+    time.sleep(0.2)
+    print "\033[1;94m[?]\033[1;m Configuring Plugin"
+    time.sleep(1)
+    print ""
+    print "Name             Set Value"
+    print "----             ----------"
+    print "Target           %s" % (ask.target)
+    print "Listener         %s" % (ask.lhost)
+    print "Listener Port    %s" % (ask.lport)
+    print "Plugin           %s" % (fin)
+    print "\n"
+    et = raw_input("\033[1;94m[?]\033[1;m Execute Plugins? [" + default10 + "]: ")  or default10
+    if et == 'yes':
+        pass
+    elif et == 'no':
+        exit()
+    else:
+        print "\033[1;92m[!] No options were chosen.\033[1;m"
 
+def run(cmd):
+    x = check_output(cmd, shell=True)
+    i = "[\033[1m"+colors.B+"!"+colors.W+"] "
+    print i + x
 
-def mac():
-    tree = etree.parse("Resources/mac.xml")
-    for user in tree.xpath("/configuration/config/default_target"):
-        print "\033[1;94m[?]\033[1;m Mac :: Enter a mac address"
-        default_target = raw_input('\033[1;92m[+]\033[1;m MAC [' + user.text + ']: ') or user.text
-    retarget_xml = """<?xml version="1.0" encoding="UTF-8"?>
-<configuration>
-    <config name="roxysploit">
-      		<default_target>""" + default_target + """</default_target>
-    </config>
-</configuration>"""
-    retarget_file = open("Resources/mac.xml", "w")
-    retarget_file.write(retarget_xml)
-    retarget_file.close()
+def warning(msg):
+    print "[\033[1m"+colors.O+"/"+colors.W+"]", msg
+
+def fail(msg):
+    print "[\033[1m"+colors.R+"?"+colors.W+"]", msg
+
+def success(msg):
+    print "[\033[1m"+colors.G+"!"+colors.W+"]", msg
+
+def text(msg):
+    print "\033[1;94m[*]\033[1;m", msg
