@@ -89,7 +89,7 @@ def dashboard():
         sys.exit()
 
 class ask():
-    tree = etree.parse("Recoureses/lhost.xml")
+    tree = etree.parse("Resources/lhost.xml")
     for l in tree.xpath("/configuration/config/default_target"):
         lhost = "%s" % (l.text)
 
@@ -97,11 +97,11 @@ class ask():
     for t in treebunck.xpath("/configuration/config/default_target"):
 	    target = "%s" % (t.text)
 
-    buckit = etree.parse("Recoureses/lport.xml")
+    buckit = etree.parse("Resources/lport.xml")
     for f in buckit.xpath("/configuration/config/default_target"):
 	    lport = "%s" % (f.text)
 
-    shitlist = etree.parse("Recoureses/mac.xml")
+    shitlist = etree.parse("Resources/mac.xml")
     for z in shitlist.xpath("/configuration/config/default_target"):
 	    mac = "%s" % (z.text)
 
