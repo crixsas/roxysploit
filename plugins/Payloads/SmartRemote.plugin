@@ -1,4 +1,4 @@
-#!/usr/bin/python
+Description = 'Take over a smart tvs remote control without authentication'
 
 import sys, os, time
 import logging
