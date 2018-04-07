@@ -1,15 +1,13 @@
 # Last updated on: 4 April 2018
 # Added better plugin support
-|Tested on|.
-|---|---
-|Arch Linux|Working
-|Kali Linux|Working
-|Ubuntu|Working
-|Debian|Working
-|Centos|Not Tested
-|Android| Working :)
-|MacOSX|Needs porting
-|Windows| Ha no.
+
+<img src="https://img.shields.io/badge/Th3inspector-1.9-brightgreen.svg" alt="Version" data-canonical-src="https://img.shields.io/badge/Th3inspector-1.9-brightgreen.svg?maxAge=259200" style="max-width:100%;"></a>
+<img src="https://img.shields.io/badge/Supported%20OS-Linux%2FWindows%2FmacOS-brightgreengreen.svg" alt="Build" data-canonical-src="https://img.shields.io/badge/Supported%20OS-Linux%2FWindows%2FmacOS-brightgreengreen.svg" style="max-width:100%;"></a>
+<img src="https://img.shields.io/packagist/l/doctrine/orm.svg" alt="Build" data-canonical-src="https://img.shields.io/packagist/l/doctrine/orm.svg" style="max-width:100%;"></a><br>
+
+<h4>RoxySploit - The Best Framework for Hackers/pentesters</h4>
+<img src="carbon.png" data-canonical-src="carbon.png" width="700" height="470">
+<hr>
 
 ## Please support me at btc: 15oGX5N4dYFqa21owv8etJ7xkxE8k4jb1v
 ## How to install
