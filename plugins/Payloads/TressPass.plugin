@@ -1,4 +1,5 @@
-#!/usr/bin/python
+Description = 'PHP Backdoor with management'
+
 import os, sys, time
 import logging
 from lxml import etree
