@@ -1,4 +1,4 @@
-<img src="https://img.shields.io/badge/Th3inspector-1.9-brightgreen.svg" alt="Version" data-canonical-src="https://img.shields.io/badge/Th3inspector-1.9-brightgreen.svg?maxAge=259200" style="max-width:100%;"></a>
+<img src="https://img.shields.io/badge/Roxysploit-1.9-brightgreen.svg" alt="Version" data-canonical-src="https://img.shields.io/badge/Roxysploit-1.9-brightgreen.svg?maxAge=259200" style="max-width:100%;"></a>
 <img src="https://img.shields.io/badge/Supported%20OS-Linux%2FWindows%2FmacOS-brightgreengreen.svg" alt="Build" data-canonical-src="https://img.shields.io/badge/Supported%20OS-Linux%2FWindows%2FmacOS-brightgreengreen.svg" style="max-width:100%;"></a>
 <img src="https://img.shields.io/packagist/l/doctrine/orm.svg" alt="Build" data-canonical-src="https://img.shields.io/packagist/l/doctrine/orm.svg" style="max-width:100%;"></a><br>
 <h2>Last updated on: 4 April 2018</h2>
