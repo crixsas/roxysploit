@@ -1,5 +1,4 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
+Description = 'Extract IOS Backup database, use Mapple to get manifest key'
 
 import re
 import sys
@@ -16,7 +15,7 @@ from lxml import etree
 from urlparse import urlparse
 from struct import pack
 
-plugin_description = "Author: Eitenne\nAbout: Automated version of iloot in roxysploit plugins"
+plugin_description = Description
 shelly = "shellcode"
 intname = "rsf"
 det = sys.argv[0]
