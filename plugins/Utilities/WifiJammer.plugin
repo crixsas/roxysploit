@@ -1,4 +1,4 @@
-#!/usr/bin/python
+Description = 'Deauth a networks bssid and essid.
 
 import sys, os, time
 import logging
