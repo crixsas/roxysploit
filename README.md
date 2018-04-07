@@ -3,7 +3,7 @@
 <img src="https://img.shields.io/packagist/l/doctrine/orm.svg" alt="Build" data-canonical-src="https://img.shields.io/packagist/l/doctrine/orm.svg" style="max-width:100%;"></a><br>
 <h2>Last updated on: 4 April 2018</h2>
 <h4>RoxySploit - The Best Framework for Hackers/pentesters</h4>
-<img src="carbon.png" data-canonical-src="carbon.png" width="700" height="470">
+<img src="carbon.png" data-canonical-src="carbon.png">
 <hr>
 
 ## Please support me at btc: 15oGX5N4dYFqa21owv8etJ7xkxE8k4jb1v
