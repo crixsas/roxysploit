@@ -18,6 +18,18 @@
 ## + <a href="https://discord.gg/7qXa3dg"> Discord</a>
 ## + <a href="https://www.youtube.com/channel/UCvydKPHB5fzqrJpS6BUqdRQ"> Youtube</a>
 
+## Video Tutorials
+[Hacking using Tresspass | RoxySploit / Roxy Exploitation Framework]: https://www.youtube.com/
+
+## What operating systems support roxysploit?
+All Linux distros are currently supported, it is recomended for a prebuilt pentesting os like kali linux although.
+
+## What is roxysploit?
+roxysploit is a community-supported, open-source and penetration testing suite that supports attacks for numerous scenarios. conducting attacks in the field.
+
+## Developers
+0x5a
+
 ## Plugin example
 <pre>
 Description = 'Some description at the top of the plugin file because its how it works :/'
@@ -62,16 +74,3 @@ warning("There was an issue oh no lol")
 fail("RIP get fuked")
 success("heheheheheh good well done")
 text("random")</pre>
-<img src="carbon.png">
-
-## Video Tutorials
-[Hacking using Tresspass | RoxySploit / Roxy Exploitation Framework]: https://www.youtube.com/
-
-## What operating systems support roxysploit?
-All Linux distros are currently supported, it is recomended for a prebuilt pentesting os like kali linux although.
-
-## What is roxysploit?
-roxysploit is a community-supported, open-source and penetration testing suite that supports attacks for numerous scenarios. conducting attacks in the field.
-
-## Credits
-0x5a
