@@ -1,3 +1,5 @@
+Description = 'Wordpress plugin backdoor'
+
 import os, random, sys, zipfile, subprocess, requests
 from plugin_support import *
 
