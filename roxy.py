@@ -133,7 +133,7 @@ try:
     sx.connect(('8.8.8.8', 80))
     hostname = sx.getsockname()[0]
     data = "%s:%s" % (hostname[0],hostname[1])
-    print "\033[1;94m[?]\033[1;m Connected to a network:", data
+    print "\033[1;92m[?]\033[1;m Connected to a network:", data
 except:
     print "\033[1;31m[?]\033[1;m Failed to connect to a network: <null>"
 
