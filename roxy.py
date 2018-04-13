@@ -106,19 +106,10 @@ if CHECK_STORAGE == False:
 else:
     var = "1"
 
-os.system('clear')
-time.sleep(0.1)
-for i in range(101):
-        time.sleep(0.03)
-        stdout.write("\r[\033[92m*\033[0m] Preparing environment... %d" % (i))
-        stdout.flush()
 RescoursesDir = os.getcwd()
-
 dandtime = time.strftime("%d-%m-%Y-%H:%M:%S")
-
 logfile = "%s/storage/logs/%s.log" % (RescoursesDir,dandtime)
 
-print ""
 if CHECK_LOGS == True:
     filename_logging = os.path.join(os.path.dirname(__file__), logfile)
     logging.basicConfig(filename=filename_logging, filemode='w', level=logging.DEBUG)
@@ -131,7 +122,7 @@ sx = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 hostname = '0.0.0.0'
 try:
     sx.connect(('8.8.8.8', 80))
-    hostname = sx.getsockname()[0]
+    hostname = sx.getsockname()
     data = "%s:%s" % (hostname[0],hostname[1])
     print "\033[1;92m[?]\033[1;m Connected to a network:", data
 except:
@@ -184,7 +175,7 @@ PLUGIN_END = ".plugin"
 PLUGIN_EXEC = "python plugins/"
 def main():
     try:
-        line_1 = "\033[1;4m" + intname + "\033[1;24m > "
+        line_1 = "\033[1;4m" + intname + "\033[1;24m\033[0m> "
         terminal = raw_input(line_1)
         logging.info(terminal)
         time.sleep(0.5)
