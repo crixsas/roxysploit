@@ -26,7 +26,6 @@ from lxml import etree
 from core import retarget
 os.system('clear')
 
-time.sleep(1)
 default_uid = "yes"
 if not os.geteuid() == 0:
     print """\033[1;91m\n[\033[1;m!\033[1;91m]\033[1;m You are running roxysploit as user.\033[1;m"""
@@ -136,9 +135,9 @@ if CHECK_XML == False:
 else:
     var = "1"
 
-time.sleep(0.9)
+time.sleep(0.6)
 print "\033[1;94m[*]\033[1;m Retargetting Session"
-time.sleep(1)
+time.sleep(0.1)
 tree = etree.parse("storage/logs/config.xml")
 for user in tree.xpath("/configuration/config/default_target"):
 	default_target = raw_input('\033[1;92m[+]\033[1;m Default Target IP Address [' + user.text + ']: ') or user.text
@@ -155,13 +154,13 @@ retarget_file.write(retarget_xml)
 retarget_file.close()
 
 print "\033[1;94m[?]\033[1;m Initializing Global State"
-time.sleep(0.9)
+time.sleep(0.6)
 print "\033[1;92m[+]\033[1;m Set TargetIp => %s" % (default_target)
-time.sleep(2)
+time.sleep(0.2)
 print "\033[1;92m[+]\033[1;m Loaded plugins => %s" % (total_plugins)
-time.sleep(0.3)
+time.sleep(0.2)
 print "\033[1;92m[+]\033[1;m Detected Version => %s" % (version)
-time.sleep(1)
+time.sleep(0.1)
 header.main_header()
 help.help()
 os.system('python modules/session.py')
@@ -178,7 +177,6 @@ def main():
         line_1 = "\033[1;4m" + intname + "\033[1;24m\033[0m> "
         terminal = raw_input(line_1)
         logging.info(terminal)
-        time.sleep(0.5)
         if terminal[0:3] =='use':
             if terminal[4:] == terminal[4:]:
                 Exploit_check = "plugins/Exploits/%s.plugin" % (terminal[4:])
