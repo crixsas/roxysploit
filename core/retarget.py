@@ -5,7 +5,7 @@ import os, sys, time
 from lxml import etree
 
 def edit():
-    time.sleep(1)
+    time.sleep(0.1)
     XML = "storage/logs/config.xml"
     CHECK_XML = os.path.exists(XML)
 
@@ -14,7 +14,6 @@ def edit():
     else:
        var = "1"
 
-    print "\033[1;94m[*]\033[1;m Retargetting Session"
     time.sleep(1)
     tree = etree.parse("storage/logs/config.xml")
     for user in tree.xpath("/configuration/config/default_target"):
@@ -30,9 +29,4 @@ def edit():
     retarget_file = open("storage/logs/config.xml", "w")
     retarget_file.write(retarget_xml)
     retarget_file.close()
-    time.sleep(0.9)
-    print "\033[1;92m[+]\033[1;m Set TargetIp => %s" % (default_target)
-    time.sleep(2)
-    print "\033[1;94m[?]\033[1;m ReInitializing Global State"
-    time.sleep(1)
-    print "\033[1;92m[+]\033[1;m Configure successful"
+    print "\033[1;92m[+]\033[1;m Completed."
