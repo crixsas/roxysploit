@@ -16,6 +16,7 @@ import rlcompleter, readline
 import os.path
 import logging
 import re
+import socket
 import glob
 from terminaltables import DoubleTable
 from os.path import join
@@ -126,6 +127,15 @@ else:
     print "\033[1;31m[?]\033[1;m Failed Creating logfile:", logfile
 
 time.sleep(1)
+sx = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+hostname = '0.0.0.0'
+try:
+    sx.connect(('8.8.8.8', 80))
+    hostname = sx.getsockname()[0]
+    data = "%s:%s" % (hostname[0],hostname[1])
+    print "\033[1;94m[?]\033[1;m Connected to a network:", data
+except:
+    print "\033[1;31m[?]\033[1;m Failed to connect to a network: <null>"
 
 XML = "storage/logs/config.xml"
 CHECK_XML = os.path.exists(XML)
@@ -135,7 +145,7 @@ if CHECK_XML == False:
 else:
     var = "1"
 
-time.sleep(5)
+time.sleep(0.9)
 print "\033[1;94m[*]\033[1;m Retargetting Session"
 time.sleep(1)
 tree = etree.parse("storage/logs/config.xml")
