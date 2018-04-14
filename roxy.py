@@ -40,17 +40,25 @@ version_open = open("storage/version","r")
 version = version_open.read()
 intname = "rsf"
 lan_ip = os.popen("hostname -i | awk {' print $1 '}").read()
-#public_ip = os.popen("wget http://ipinfo.io/ip -qO -").read()
 
-#dir = "plugins/"
-#test=os.listdir(dir)
-
-#for item in test:
-#    if item.endswith(".plugin"):
-#        plugins_all = item.split('.')[0]
-
-options_sl = ['session','Exploits','Utilities','Payloads','use','retarget','!','clean','others','gen','show All','?','clear','exit','banner','help', 'show','ipnet','show Exploits','show Payloads','show Utilities']
-
+options_sl = [
+    'session',
+    'Exploits',
+    'Utilities',
+    'Payloads',
+    'use',
+    'retarget',
+    '!',
+    'clean',
+    'All',
+    'show',
+    '?',
+    'clear',
+    'exit',
+    'banner',
+    'help',
+    'ipnet'
+    ]
 addrs = glob.glob("plugins/Payloads/*.plugin")
 addrs += glob.glob("plugins/Exploits/*.plugin")
 addrs += glob.glob("plugins/Utilities/*.plugin")
