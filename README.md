@@ -9,7 +9,7 @@
 
 ## How to install
 <pre>$ git clone https://github.com/Eitenne/roxysploit.git; cd roxysploit; sudo /usr/bin/python2 installer.py</pre>
-
+<pre>pip install whois requests pycrypto</pre>
 ## Legal Disclamer:
   The author does not hold any responsibility for the bad use of this tool,
   remember that attacking targets without prior consent is illegal and punished by law.
