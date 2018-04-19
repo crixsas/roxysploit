@@ -1,0 +1,7 @@
+Description = 'Enumerate DNS Servers out of ssl certificate'
+from plugin_support import *
+
+CertDum_command = "keytool -printcert -sslserver " + ask.target + ":443 | grep 'DNS' | tr -d 'DNSName:' | tr -d '   '"
+before_execute()
+text("Getting dns servers out of extracted ssl certificate")
+run(CertDum_command)
